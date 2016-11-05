@@ -18,5 +18,8 @@ RUN sed -i 's|{db_server_placeholder}|'"${DBHOST}"'|g' appsettings.json
 RUN sed -i '/"net451": { }/d' project.json
 
 RUN dotnet restore
-RUN dotnet build -c Release
-ENTRYPOINT dotnet run -c Release server.urls=http://*:8080 scenarios=$SCENARIOS server=kestrel threadcount=$THREADCOUNT noninteractive=true
+RUN dotnet publish -o /pub -c Release
+
+WORKDIR /pub
+
+ENTRYPOINT dotnet app.dll scenarios=$SCENARIOS server=kestrel threadcount=$THREADCOUNT noninteractive=true
