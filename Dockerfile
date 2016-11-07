@@ -1,7 +1,7 @@
 FROM microsoft/dotnet
 
 ENV SCENARIOS plaintext
-ENV THREADCOUNT 1
+ENV THREADCOUNT -1
 
 WORKDIR /app
 
