@@ -1,4 +1,4 @@
-FROM microsoft/dotnet
+FROM microsoft/dotnet:1.0-sdk-projectjson
 
 ENV SCENARIOS plaintext
 ENV THREADCOUNT -1
