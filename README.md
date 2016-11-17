@@ -1,6 +1,6 @@
 # techempower-aspnetcore-docker
 
-## Server
+## Build
 ```
 git clone https://github.com/TechEmpower/FrameworkBenchmarks
 cd FrameworkBenchmarks/frameworks/CSharp/aspnetcore/Benchmarks
