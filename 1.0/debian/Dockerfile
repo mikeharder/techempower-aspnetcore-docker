@@ -17,7 +17,7 @@ RUN dotnet restore
 RUN dotnet publish -o /pub -c Release
 
 WORKDIR /pub
-COPY techempower-aspnetcore-docker/run.sh .
+COPY techempower-aspnetcore-docker/1.0/debian/run.sh .
 RUN chmod +x run.sh
 
 CMD ["./run.sh"]
