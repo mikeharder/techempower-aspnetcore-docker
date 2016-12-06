@@ -11,7 +11,7 @@ EXPOSE 8080
 COPY . .
 COPY appsettings.postgresql.json appsettings.json
 
-RUN sed -i '/"net451": { }/d' project.json
+RUN sed -i.net451 '/"net451": { }/d' project.json
 
 RUN dotnet restore
 RUN dotnet publish -o /pub -c Release
