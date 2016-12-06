@@ -15,6 +15,12 @@ findstr /v net451 project.json.net451 > project.json
 dotnet restore
 dotnet publish -c Release
 ```
+## Container
+```
+cd FrameworkBenchmarks\frameworks\CSharp\aspnetcore\Benchmarks
+git submodule add https://github.com/mikeharder/techempower-aspnetcore-docker
+docker build -t techempower-aspnetcore-docker -f techempower-aspnetcore-docker/1.0/nanoserver/Dockerfile
+```
 
 # Fortunes
 ## Server
