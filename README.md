@@ -41,8 +41,13 @@ wrk -c 256 -t 32 -d 10 -s pipeline.lua http://server-ip-or-name:8080/plaintext -
 dotnet bin/Release/netcoreapp1.0/Benchmarks.dll scenarios=fortunes server.urls=http://+:8080 noninteractive=true
 ```
 ### Container
+#### Bridge Networking
 ```
 docker run -it --rm -p 8080:8080 -e SCENARIOS=fortunes -e DBHOST=db-name-or-ip aspnetcore
+```
+#### Host Networking
+```
+docker run -it --rm --network host -e SCENARIOS=fortunes -e DBHOST=db-name-or-ip aspnetcore
 ```
 ## Client
 ```
