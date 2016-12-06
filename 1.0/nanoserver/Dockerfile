@@ -16,6 +16,6 @@ RUN dotnet restore
 RUN dotnet publish -o /pub -c Release
 
 WORKDIR /pub
-COPY techempower-aspnetcore-docker/run.cmd .
+COPY techempower-aspnetcore-docker/1.0/nanoserver/run.cmd .
 
 CMD ["run.cmd"]
