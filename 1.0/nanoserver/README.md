@@ -28,3 +28,7 @@ docker build -t techempower-aspnetcore-docker -f techempower-aspnetcore-docker\1
 ```
 dotnet bin\Release\netcoreapp1.0\Benchmarks.dll scenarios=fortunes server.urls=http://+:8080 noninteractive=true
 ```
+### Container
+```
+docker run -it --rm -p 8080:8080 -e SCENARIOS=fortunes techempower-aspnetcore-docker
+```
