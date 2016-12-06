@@ -19,7 +19,7 @@ dotnet publish -c Release
 ```
 cd FrameworkBenchmarks\frameworks\CSharp\aspnetcore\Benchmarks
 git submodule add https://github.com/mikeharder/techempower-aspnetcore-docker
-docker build -t techempower-aspnetcore-docker -f techempower-aspnetcore-docker/1.0/nanoserver/Dockerfile
+docker build -t techempower-aspnetcore-docker -f techempower-aspnetcore-docker\1.0\nanoserver\Dockerfile .
 ```
 
 # Fortunes
