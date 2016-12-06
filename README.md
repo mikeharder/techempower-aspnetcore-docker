@@ -44,3 +44,7 @@ dotnet bin/Release/netcoreapp1.0/Benchmarks.dll scenarios=fortunes server.urls=h
 ```
 docker run -it --rm -p 8080:8080 -e SCENARIOS=fortunes -e DBHOST=db-name-or-ip aspnetcore
 ```
+## Client
+```
+wrk -c 256 -t 32 -d 10 http://server-ip-or-name:8080/fortunes/raw
+```
