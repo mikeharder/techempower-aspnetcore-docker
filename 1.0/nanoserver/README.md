@@ -15,3 +15,10 @@ findstr /v net451 project.json.net451 > project.json
 dotnet restore
 dotnet publish -c Release
 ```
+
+# Fortunes
+## Server
+### Host
+```
+dotnet bin\Release\netcoreapp1.0\Benchmarks.dll scenarios=fortunes server.urls=http://+:8080 noninteractive=true
+```
