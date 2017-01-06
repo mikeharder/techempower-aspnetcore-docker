@@ -9,7 +9,7 @@ cd FrameworkBenchmarks/frameworks/CSharp/aspnetcore/Benchmarks
 sed -i.net451 '/net451/d' project.json
 sed 's|{db_server_placeholder}|db-name-or-ip|g' appsettings.postgresql.json > appsettings.json
 dotnet restore
-dotnet publish -c Release
+dotnet build -c Release
 ```
 ## Container
 ```
@@ -22,7 +22,7 @@ docker build -t aspnetcore -f techempower-aspnetcore-docker/1.0/debian/Dockerfil
 ## Server
 ### Host
 ```
-dotnet bin/Release/netcoreapp1.0/publish/Benchmarks.dll scenarios=plaintext server.urls=http://+:8080 threadcount=[nproc / 4] noninteractive=true
+dotnet bin/Release/netcoreapp1.0/Benchmarks.dll scenarios=plaintext server.urls=http://+:8080 threadcount=[nproc / 4] noninteractive=true
 ```
 ### Container
 ```
@@ -38,7 +38,7 @@ wrk -c 256 -t 32 -d 10 -s pipeline.lua http://server-ip-or-name:8080/plaintext -
 ## Server
 ### Host
 ```
-dotnet bin/Release/netcoreapp1.0/publish/Benchmarks.dll scenarios=fortunes server.urls=http://+:8080 noninteractive=true
+dotnet bin/Release/netcoreapp1.0/Benchmarks.dll scenarios=fortunes server.urls=http://+:8080 noninteractive=true
 ```
 ### Container
 #### Bridge Networking
