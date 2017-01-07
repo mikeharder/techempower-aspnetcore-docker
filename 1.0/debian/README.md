@@ -6,7 +6,6 @@ git clone https://github.com/TechEmpower/FrameworkBenchmarks
 ## Host
 ```
 cd FrameworkBenchmarks/frameworks/CSharp/aspnetcore/Benchmarks
-sed -i.net451 '/net451/d' project.json
 sed 's|{db_server_placeholder}|db-name-or-ip|g' appsettings.postgresql.json > appsettings.json
 dotnet restore
 dotnet build -c Release
